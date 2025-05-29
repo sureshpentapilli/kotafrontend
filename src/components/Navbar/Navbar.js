@@ -8,7 +8,6 @@ import { ServicesData } from "../../components/services/ServicesData";
 import { ResourcesData } from "../../components/resources/ResourcesData";
 import { VentureData } from "../../components/ventures/VentureData";
 
-
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -25,26 +24,13 @@ const Navbar = () => {
       {/* Top bar */}
 
       <div className="text-white py-2 background-small">
-        <div className="container d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start top-navbar">
-          {/* Social Icons */}
-          <div className="d-flex gap-3 mb-2 mb-md-0">
-            <a href="#" className="text-decoration-none facebook">
-              <i className="bi bi-facebook"></i>
-            </a>
-            <a href="#" className="text-decoration-none twitter">
-              <i className="bi bi-twitter"></i>
-            </a>
-            <a href="#" className="text-decoration-none instagram">
-              <i className="bi bi-instagram"></i>
-            </a>
-            <a
-              href="https://wa.me/919966462386"
-              className="text-decoration-none whatsapp"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i className="bi bi-whatsapp"></i>
-            </a>
+        <div className="container-fluid d-flex flex-column flex-md-row justify-content-between align-items-center text-center text-md-start top-navbar">
+          {/* Registration Number instead of Social Icons */}
+          <div
+            className="mb-2 mb-md-0"
+            style={{ fontSize: "20px", fontWeight: "bold" }}
+          >
+            Registration No: U70200AP2025PTC117652
           </div>
 
           {/* Scrolling Text */}
@@ -117,38 +103,54 @@ const Navbar = () => {
                   Home
                 </a>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/about">
-                  About
+              <li className="nav-item dropdown">
+                <a
+                  className="nav-link dropdown-toggle"
+                  href="/about"
+                  id="aboutDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  onClick={(e) => e.preventDefault()} // Prevent default dropdown toggle on click
+                >
+                  About Us
                 </a>
+                <ul className="dropdown-menu" aria-labelledby="aboutDropdown">
+                  {/* You can add submenu items here if needed */}
+                  <li>
+                    <Link className="dropdown-item" to="/about">
+                      About Us Home
+                    </Link>
+                  </li>
+                </ul>
               </li>
 
               <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav">
-                <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="#"
-                  id="companyDropdown"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  ventures
-                </a>
-                <ul className="dropdown-menu">
-                  {VentureData.map((item) => (
-                    <li key={item.id}>
-                      <Link
-                        className="dropdown-item"
-                        to={`/venture/${item.id}`} // Dynamic Routing
-                      >
-                        {item.title}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </li>
+                  <li className="nav-item dropdown">
+                    <a
+                      className="nav-link dropdown-toggle"
+                      href="#"
+                      id="companyDropdown"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      ventures
+                    </a>
+                    <ul className="dropdown-menu">
+                      {VentureData.map((item) => (
+                        <li key={item.id}>
+                          <Link
+                            className="dropdown-item"
+                            to={`/venture/${item.id}`} // Dynamic Routing
+                          >
+                            {item.title}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </li>
                 </ul>
               </div>
 
@@ -208,38 +210,48 @@ const Navbar = () => {
                 </a>
               </li>
               <li className="nav-item dropdown">
-<li className="nav-item dropdown">
-  <a
-    className="nav-link dropdown-toggle"
-    href="#"
-    id="registerDropdown"
-    role="button"
-    data-bs-toggle="dropdown"
-    aria-expanded="false"
-    onClick={(e) => e.preventDefault()} // Prevent scrolling to top
-  >
-    Register
-  </a>
-  <ul className="dropdown-menu" aria-labelledby="registerDropdown">
-    <li>
-      <Link className="dropdown-item" to="/register/ngo">NGO</Link>
-    </li>
-    <li>
-      <Link className="dropdown-item" to="/register/applicant">Applicant</Link>
-    </li>
-  </ul>
-</li>
+                <li className="nav-item dropdown">
+                  <a
+                    className="nav-link dropdown-toggle"
+                    href="#"
+                    id="registerDropdown"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    onClick={(e) => e.preventDefault()} // Prevent scrolling to top
+                  >
+                    Register
+                  </a>
+                  <ul
+                    className="dropdown-menu"
+                    aria-labelledby="registerDropdown"
+                  >
+                    <li>
+                      <Link className="dropdown-item" to="/register/ngo">
+                        NGO
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="dropdown-item" to="/register/applicant">
+                        Applicant
+                      </Link>
+                    </li>
+                  </ul>
+                </li>
 
-  <ul className="dropdown-menu">
-    <li>
-      <Link className="dropdown-item" to="/register/ngo">NGO</Link>
-    </li>
-    <li>
-      <Link className="dropdown-item" to="/register/applicant">Applicant</Link>
-    </li>
-  </ul>
-</li>
-
+                <ul className="dropdown-menu">
+                  <li>
+                    <Link className="dropdown-item" to="/register/ngo">
+                      NGO
+                    </Link>
+                  </li>
+                  <li>
+                    <Link className="dropdown-item" to="/register/applicant">
+                      Applicant
+                    </Link>
+                  </li>
+                </ul>
+              </li>
             </ul>
 
             {/* Search Input Field */}
