@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Navbar from "../Navbar/Navbar";
+import Footer from "../Footer/Footer";
 import axios from "axios";
 
 const NGOForm = () => {
@@ -31,6 +33,8 @@ const NGOForm = () => {
     contactNumber: "",
     email: "",
     webId: "",
+    state: "",
+    parlimentConstituency: "",
   });
 
   const [files, setFiles] = useState({
@@ -76,6 +80,11 @@ const NGOForm = () => {
   };
 
   return (
+
+
+
+    <>
+    <Navbar />
     <div className="container mt-4">
       <div className="card shadow-lg p-4">
         <h2 className="text-center mb-4">NGO Registration Form</h2>
@@ -83,7 +92,7 @@ const NGOForm = () => {
           {/* NGO Details */}
           <h5 className="mt-4">Organization Details</h5>
           <div className="row">
-            {["organizationName", "registrationNumber", "number80G", "number12A", "fcraNumber"].map((field) => (
+            {["state","parlimentConstituency","organizationName", "registrationNumber", "number80G", "number12A", "fcraNumber"].map((field) => (
               <div className="col-md-6 mb-3" key={field}>
                 <label className="form-label">
                   {field.replace(/([A-Z])/g, " $1").replace(/^./, s => s.toUpperCase())}
@@ -194,6 +203,8 @@ const NGOForm = () => {
         </form>
       </div>
     </div>
+    <Footer />
+    </>
   );
 };
 
