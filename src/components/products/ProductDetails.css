@@ -1,0 +1,21 @@
+/* Active category style */
+.active-category {
+    background-color: #213363 !important; /* Custom Active Color */
+    color: white !important;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  }
+  
+  /* Hover effect for categories */
+  .list-group-item-action:hover {
+    background-color: #9ab7f5 !important;
+    color: white !important;
+    transform: scale(1.03);
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  }
+  
+  /* Smooth Animation for Shadow & Border */
+  .transition-effect {
+    transition: all 0.3s ease-in-out;
+  }
+  

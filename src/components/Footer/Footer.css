@@ -1,0 +1,58 @@
+.bg-footer{
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+              url('../../../public/images/footer.avif') no-repeat center center/cover;
+    color: white; /* Ensure text is visible */
+    padding-top: 5rem;
+    padding-bottom: 4rem;
+  }
+  
+  .bg-footer h5, 
+  .bg-footer p, 
+  .bg-footer ul li, 
+  .bg-footer a, 
+  .bg-footer hr {
+    color: white !important;  /* Ensures all elements inside the footer are white */
+  }
+  
+  .bg-footer hr {
+    background-color: white !important;
+  }
+  
+  .bg-footer .btn {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white !important;
+    border: none;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .bg-footer .btn:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+  
+  .bg-footer .input-group input {
+    background: rgba(255, 255, 255, 0.2);
+    color: white !important;
+    border: none;
+  }
+  
+  .bg-footer .input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .bg-footer .input-group .btn {
+    background: #007bff;
+    color: white !important;
+  }
+  
+  .list-unstyled-one li::before {
+    content: "→ "; /* Right arrow symbol */
+    font-weight: bold;
+    color:white !important;
+    margin-right: 5px;
+   
+  }
+  
+
+
+
+  

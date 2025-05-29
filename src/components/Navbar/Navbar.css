@@ -1,0 +1,174 @@
+.navbar-nav .nav-link {
+    color: #333;
+    font-weight: 700;
+    padding: 1rem 1.2rem;
+    font-size: 18px;
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: #81d756;
+  }
+  .background-small{
+  background-color:#81d756 !important;
+  }
+  
+  .dropdown-menu {
+    border: none;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  }
+  .dropdown-item{
+    font-weight: bold !important;
+  }
+  
+  .dropdown-item:hover {
+    background-color: #81d756;
+    color: white;
+  }
+
+  .scrolling-text {
+    width: 100%; /* Full width on smaller screens */
+    max-width: 400px; /* Limit width on larger screens */
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+  }
+  .welcome{
+    margin-bottom: 0px !important;
+  }
+  
+  .scrolling-text p {
+    display: inline-block;
+    white-space: nowrap;
+    animation: scrollText 20s linear infinite;
+  }
+  
+  @keyframes scrollText {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .top-navbar {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .scrolling-text {
+      max-width: 100%;
+      margin-top: 10px;
+    }
+  
+    .d-flex {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .gap-3 {
+      gap: 10px;
+    }
+  
+    .gap-4 {
+      gap: 15px;
+    }
+  }
+  @media (max-width: 768px) {
+    .navbar-nav {
+      text-align: center;
+    }
+  
+    .navbar-brand img {
+      height: 50px; /* Reduce logo size for smaller screens */
+    }
+  
+    .dropdown-menu {
+      text-align: center; /* Center dropdown items on mobile */
+    }
+  
+    .nav-item {
+      margin-bottom: 5px; /* Add spacing between menu items */
+    }
+  }
+
+  .facebook i {
+    color: #1877F2; /* Facebook Blue */
+  }
+  
+  .twitter i {
+    color: #1DA1F2; /* Twitter Blue */
+  }
+  
+  .instagram i {
+    color: #E4405F; /* Instagram Pink */
+  }
+  
+  .whatsapp i {
+    color: #25D366; /* WhatsApp Green */
+  }
+  
+  .navbar-nav .nav-link{
+    font-weight: 700;
+  }
+  
+/* Parent container */
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 15px;
+  /* padding: 20px; */
+  background-color: white; /* White background */
+}
+
+/* Logo Styling */
+.brand-logo {
+  height: 80px; /* Adjust as needed */
+}
+
+/* Text container */
+.text-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main Brand Name */
+.brand-name {
+  font-family: 'Poppins', sans-serif;
+  /* font-family: math; */
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #4CAF50; /* Dark Blue */
+  margin: 0;
+}
+
+/* Subtitle */
+.sub-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #4CAF50; /* Green */
+  letter-spacing: 3px;
+  margin: 0;
+}
+
+/* Tagline */
+.tagline {
+  font-family: 'Poppins', sans-serif;
+  font-style: italic;
+  font-size: 12px;
+  color: #555;
+  /* margin-top: 5px; */
+  margin-bottom: 0px !important;
+  letter-spacing: 0.5px;
+}
+
+
+.dropdown-menu[data-bs-popper]{
+  right: 0 !important;
+  left: auto !important;
+}
+
