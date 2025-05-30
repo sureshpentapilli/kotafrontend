@@ -4,6 +4,8 @@ import Footer from "../Footer/Footer";
 import axios from "axios";
 
 const NGOForm = () => {
+  const [agreedToPolicy, setAgreedToPolicy] = useState(false);
+
   const [formData, setFormData] = useState({
     organizationName: "",
     registrationNumber: "",
@@ -52,9 +54,16 @@ const NGOForm = () => {
     setFiles({ ...files, [e.target.name]: e.target.files[0] });
   };
 
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const data = new FormData();
+
+      if (!agreedToPolicy) {
+    alert("Please agree to the Privacy Policy before submitting.");
+    return;
+  }
 
     for (let key in formData) {
       data.append(key, formData[key]);
@@ -196,6 +205,21 @@ const NGOForm = () => {
               </div>
             ))}
           </div>
+
+          <div className="form-check mt-3">
+  <input
+    className="form-check-input"
+    type="checkbox"
+    id="privacyPolicy"
+    checked={agreedToPolicy}
+    onChange={(e) => setAgreedToPolicy(e.target.checked)}
+    required
+  />
+  <label className="form-check-label" htmlFor="privacyPolicy">
+    I agree to the <strong>Privacy Policy</strong>: I understand that the information I submit may be used for verification and record purposes, and I accept that the organization is not responsible for any future misuse, data sharing, or legal implications arising from the data I provide.
+  </label>
+</div>
+
 
           <div className="text-center mt-4">
             <button type="submit" className="btn btn-primary px-5">Register NGO</button>
